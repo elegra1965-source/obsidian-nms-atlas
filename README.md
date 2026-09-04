@@ -1,11 +1,11 @@
-# No Man's Sky — Atlas
+# No Mans Sky - Atlas
 
 A deep-space, No Man's Sky-inspired theme for [Obsidian](https://obsidian.md). Your notes float on a living galaxy, headings are written in the Korvax alphabet and translate to English when you hover them, and the whole window boots like an Atlas terminal.
 
 > Cyan & gold HUD · galaxy background · alien glyph headings · dark + light · deep Style Settings.
 
 <!-- Add a real capture named screenshot.png at the repo root, then this will render: -->
-![No Man's Sky — Atlas](screenshot.png)
+![No Mans Sky - Atlas](screenshot.png)
 
 ## Features
 
@@ -20,16 +20,16 @@ A deep-space, No Man's Sky-inspired theme for [Obsidian](https://obsidian.md). Y
 
 ## Install
 
-**From the community store (once published):** Settings → Appearance → Themes → Manage → search "No Man's Sky — Atlas".
+**From the community store (once published):** Settings → Appearance → Themes → Manage → search "No Mans Sky - Atlas".
 
 **Manual:**
-1. Copy `theme.css` and `manifest.json` into `<your vault>/.obsidian/themes/No Man's Sky — Atlas/`.
+1. Copy `theme.css` and `manifest.json` into `<your vault>/.obsidian/themes/No Mans Sky - Atlas/`.
 2. Settings → Appearance → Themes → select it. Set the colour scheme to **Dark** for the full effect.
 3. (Recommended) install the **Style Settings** community plugin to unlock the control panel below.
 
 ## Style Settings panel
 
-Open Settings → Style Settings → **No Man's Sky — Atlas**:
+Open Settings → Style Settings → **No Mans Sky - Atlas**:
 
 - **Accent color** — Atlas Cyan / Exosuit Gold / Atlas Path Red / Sentinel Green / Anomaly Violet
 - **Glow & atmosphere** — accent glow + strength, HUD grid (+ animate), CRT scanlines, vignette
@@ -49,5 +49,6 @@ Everything works at sensible defaults even without Style Settings; the plugin ju
 
 - UI fonts (Orbitron, Rajdhani) load from Google Fonts on first run. The NMS alphabet font and the galaxy image are embedded in `theme.css`.
 - NMS Alphabet font used with permission from seontonppa.
-- Unofficial fan project, inspired by No Man's Sky (Hello Games); not affiliated or endorsed. See `LICENSE` (MIT) and the note about bundled assets before redistributing.
+- Unofficial fan project, inspired by No Man's Sky (Hello Games); not affiliated or endorsed. See `LICENSE` (MIT) for the license terms.
+- The "NMS Alphabet" font and the No Man's Sky aesthetic are inspired by No Man's Sky (Hello Games). Replace bundled assets with your own before redistribution if you wish to avoid any third-party rights concerns.
 - To publish to the Obsidian community themes list, see `PUBLISHING.md`.
