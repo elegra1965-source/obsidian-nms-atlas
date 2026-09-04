@@ -1,0 +1,9 @@
+{
+  "id": "nms-discovery-toast",
+  "name": "NMS Discovery Toast",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Shows a No Man's Sky style 'ENTRY REGISTERED' toast when you create or update a note.",
+  "author": "Tony",
+  "isDesktopOnly": false
+}

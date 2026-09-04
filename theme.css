@@ -1,0 +1,1037 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* @settings
+
+name: No Man's Sky — Atlas
+id: nms-atlas
+settings:
+  -
+    id: nms-about
+    type: info-text
+    title: No Man's Sky — Atlas
+    description: Deep-space console theme. Cyan & gold HUD by default — switch the accent, toggle the atmosphere, and tune the typography below.
+  -
+    id: nms-accent
+    title: Accent color
+    description: The primary HUD accent used for links, headings, active states and glows.
+    type: class-select
+    allowEmpty: false
+    default: nms-accent-cyan
+    options:
+      -
+        label: Atlas Cyan (default)
+        value: nms-accent-cyan
+      -
+        label: Exosuit Gold
+        value: nms-accent-gold
+      -
+        label: Atlas Path Red
+        value: nms-accent-red
+      -
+        label: Sentinel Green
+        value: nms-accent-green
+      -
+        label: Anomaly Violet
+        value: nms-accent-violet
+  -
+    id: nms-glow-section
+    title: Glow & atmosphere
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: nms-glow
+    title: Accent glow
+    description: Adds the signature neon glow to headings, buttons and active elements (dark mode).
+    type: class-toggle
+    default: true
+  -
+    id: nms-glow-strength
+    title: Glow strength
+    description: Intensity of the accent glow.
+    type: variable-number-slider
+    default: 0.4
+    min: 0
+    max: 1
+    step: 0.05
+  -
+    id: nms-grid
+    title: HUD grid background
+    description: Layers a subtle scanner grid behind the editor.
+    type: class-toggle
+    default: true
+  -
+    id: nms-grid-animate
+    title: Animate the grid
+    description: Slowly scrolls the grid. Turn off (or enable system reduce-motion) for a static grid.
+    type: class-toggle
+    default: true
+  -
+    id: nms-scanlines
+    title: CRT scanlines
+    description: Faint horizontal scanline overlay across the whole window.
+    type: class-toggle
+    default: false
+  -
+    id: nms-vignette
+    title: Vignette
+    description: Darkens the edges of the window for a cockpit feel.
+    type: class-toggle
+    default: false
+  -
+    id: nms-galaxy-off
+    title: Disable galaxy background
+    description: The No Man's Sky nebula shows behind the workspace by default in dark mode. Enable this to turn it off and use the solid deep-space background.
+    type: class-toggle
+    default: false
+  -
+    id: nms-galaxy-dim
+    title: Galaxy editor dimming
+    description: How opaque the writing area is over the nebula. Higher = more readable, lower = more galaxy shows through.
+    type: variable-number-slider
+    default: 0.82
+    min: 0.4
+    max: 1
+    step: 0.02
+  -
+    id: nms-layout-section
+    title: Layout & explorer
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: nms-rainbow-folders
+    title: Rainbow biome folders
+    description: Colors top-level folders with a cycling planet-biome palette.
+    type: class-toggle
+    default: false
+  -
+    id: nms-translucent
+    title: Translucent panels
+    description: Adds blur and transparency to the sidebars (best with window translucency enabled).
+    type: class-toggle
+    default: false
+  -
+    id: nms-hide-borders
+    title: Hide workspace borders
+    description: Removes dividing lines between panes for a cleaner console.
+    type: class-toggle
+    default: false
+  -
+    id: nms-readable-headings
+    title: Readable headings
+    description: Uses near-white headings and a lighter font instead of the heavy accent display style.
+    type: class-toggle
+    default: false
+  -
+    id: nms-no-glyphs
+    title: Disable alien glyph headings
+    description: Headings, the note title, callout titles and tags render in the NMS (Korvax) alphabet by default and translate to English on hover. Enable this to keep everything in English.
+    type: class-toggle
+    default: false
+  -
+    id: nms-immersion-section
+    title: Immersion
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: nms-backdrop
+    title: Galaxy backdrop
+    description: Recolor the nebula to a planet biome.
+    type: class-select
+    allowEmpty: false
+    default: nms-backdrop-purple
+    options:
+      -
+        label: Atlas Purple (default)
+        value: nms-backdrop-purple
+      -
+        label: Toxic Green
+        value: nms-backdrop-toxic
+      -
+        label: Scorched Red
+        value: nms-backdrop-scorched
+      -
+        label: Frozen Cyan
+        value: nms-backdrop-frozen
+      -
+        label: Irradiated Gold
+        value: nms-backdrop-irradiated
+  -
+    id: nms-glyphs-all
+    title: Full immersion glyphs
+    description: Render tab titles, file names and the status bar in the NMS alphabet too (hover to translate). Off keeps navigation in English.
+    type: class-toggle
+    default: false
+  -
+    id: nms-focus
+    title: Focus / writing mode
+    description: Calms the galaxy and reverts glyph headings to English for distraction-free writing.
+    type: class-toggle
+    default: false
+  -
+    id: nms-no-boot
+    title: Disable boot splash
+    description: Turn off the Atlas "Establishing link" splash shown when the vault opens.
+    type: class-toggle
+    default: false
+  -
+    id: nms-no-brackets
+    title: Disable HUD corner brackets
+    description: Removes the cyan corner brackets on the active note.
+    type: class-toggle
+    default: false
+  -
+    id: nms-type-section
+    title: Typography
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: nms-font-body
+    title: Body font
+    description: Editor / reading text. Default Rajdhani.
+    type: variable-text
+    default: Rajdhani
+  -
+    id: nms-font-heading
+    title: Heading font
+    description: Headings and HUD chrome. Default Orbitron.
+    type: variable-text
+    default: Orbitron
+  -
+    id: nms-font-ui
+    title: Interface font
+    description: Sidebars, menus and tabs. Default Rajdhani.
+    type: variable-text
+    default: Rajdhani
+  -
+    id: nms-font-size
+    title: Body font size (px)
+    type: variable-number-slider
+    default: 17
+    min: 13
+    max: 22
+    step: 0.5
+
+*/
+
+/* ============================================================
+   NO MAN'S SKY — ATLAS  ·  Obsidian theme
+   Built on the NMS app design system (cyan #00e5ff / gold #f0a500)
+   ============================================================ */
+
+body {
+  /* --- design tokens --- */
+  --nms-font-body: 'Rajdhani';
+  --nms-font-heading: 'Orbitron';
+  --nms-font-ui: 'Rajdhani';
+  --nms-font-size: 17;
+  --nms-glow-strength: 0.4;
+  --nms-galaxy-dim: 0.82;
+
+  --nms-gold: #f0a500;
+  --nms-gold-rgb: 240, 165, 0;
+  --nms-gold-dim: #a06800;
+  --nms-white: #eaf6ff;
+
+  /* default accent = Atlas Cyan */
+  --nms-accent: #00e5ff;
+  --nms-accent-rgb: 0, 229, 255;
+  --nms-on-accent: #04121a;
+
+  /* fonts */
+  --font-text: var(--nms-font-body), 'Segoe UI', system-ui, sans-serif;
+  --font-interface: var(--nms-font-ui), 'Segoe UI', system-ui, sans-serif;
+  --font-monospace: 'JetBrains Mono', 'Fira Code', ui-monospace, 'SFMono-Regular', monospace;
+  --font-text-size: calc(var(--nms-font-size) * 1px);
+
+  /* native Obsidian accent (HSL) — cyan */
+  --accent-h: 187;
+  --accent-s: 100%;
+  --accent-l: 50%;
+}
+
+/* ---- accent variants ---- */
+body.nms-accent-cyan   { --nms-accent: #00e5ff; --nms-accent-rgb: 0,229,255;  --nms-on-accent: #04121a; --accent-h: 187; --accent-s: 100%; --accent-l: 50%; }
+body.nms-accent-gold   { --nms-accent: #f0a500; --nms-accent-rgb: 240,165,0;  --nms-on-accent: #1a1300; --accent-h: 41;  --accent-s: 100%; --accent-l: 47%; }
+body.nms-accent-red    { --nms-accent: #f0433f; --nms-accent-rgb: 240,67,63;  --nms-on-accent: #1c0606; --accent-h: 1;   --accent-s: 85%;  --accent-l: 59%; }
+body.nms-accent-green  { --nms-accent: #38e1a0; --nms-accent-rgb: 56,225,160; --nms-on-accent: #04140d; --accent-h: 154; --accent-s: 73%;  --accent-l: 55%; }
+body.nms-accent-violet { --nms-accent: #b985ff; --nms-accent-rgb: 185,133,255;--nms-on-accent: #15082b; --accent-h: 264; --accent-s: 100%; --accent-l: 76%; }
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+.theme-dark {
+  --background-primary:        #070b11;
+  --background-primary-alt:    #0a0f17;
+  --background-secondary:      #0a0f17;
+  --background-secondary-alt:  #0f1620;
+
+  --background-modifier-border:        rgba(var(--nms-accent-rgb), 0.16);
+  --background-modifier-border-hover:  rgba(var(--nms-accent-rgb), 0.32);
+  --background-modifier-border-focus:  rgba(var(--nms-accent-rgb), 0.5);
+  --background-modifier-hover:         rgba(var(--nms-accent-rgb), 0.06);
+  --background-modifier-active-hover:  rgba(var(--nms-accent-rgb), 0.1);
+  --background-modifier-form-field:    rgba(255, 255, 255, 0.035);
+  --divider-color:                     rgba(255, 255, 255, 0.07);
+
+  --text-normal:    #cfe0f0;
+  --text-muted:     rgba(207, 224, 240, 0.6);
+  --text-faint:     rgba(207, 224, 240, 0.4);
+  --text-on-accent: var(--nms-on-accent);
+  --text-accent:        var(--nms-accent);
+  --text-accent-hover:  color-mix(in srgb, var(--nms-accent), white 22%);
+  --text-selection:     rgba(var(--nms-accent-rgb), 0.22);
+  --text-highlight-bg:  rgba(var(--nms-gold-rgb), 0.28);
+
+  --interactive-accent:        var(--nms-accent);
+  --interactive-accent-hover:  color-mix(in srgb, var(--nms-accent), white 18%);
+  --interactive-normal:        rgba(255, 255, 255, 0.04);
+  --interactive-hover:         rgba(var(--nms-accent-rgb), 0.08);
+
+  --h1-color: var(--nms-accent);
+  --h2-color: var(--nms-white);
+  --h3-color: var(--nms-white);
+  --h4-color: var(--nms-white);
+  --h5-color: color-mix(in srgb, var(--nms-white), transparent 12%);
+  --h6-color: var(--text-muted);
+
+  --bold-color:   var(--nms-gold);
+  --italic-color: var(--nms-accent);
+
+  --code-background: rgba(var(--nms-accent-rgb), 0.07);
+  --code-normal:     #d7ecf2;
+
+  --tag-color:        var(--nms-gold);
+  --tag-background:   rgba(var(--nms-gold-rgb), 0.12);
+  --tag-color-hover:  var(--nms-gold);
+
+  --hr-color: rgba(var(--nms-accent-rgb), 0.18);
+
+  --titlebar-background:          #070b11;
+  --titlebar-background-focused:  #0a0f17;
+  --titlebar-text-color:          var(--text-muted);
+  --ribbon-background:            #070b11;
+  --ribbon-background-collapsed:  #070b11;
+  --status-bar-background:        #0a0f17;
+  --status-bar-text-color:        var(--text-faint);
+
+  --nav-item-color:               var(--text-muted);
+  --nav-item-color-hover:         var(--nms-white);
+  --nav-item-color-active:        var(--nms-accent);
+  --nav-item-background-active:   rgba(var(--nms-accent-rgb), 0.08);
+  --nav-indentation-guide-color:  rgba(var(--nms-accent-rgb), 0.12);
+
+  --icon-color:         var(--text-muted);
+  --icon-color-hover:   var(--nms-white);
+  --icon-color-active:  var(--nms-accent);
+
+  --scrollbar-thumb-bg:        rgba(var(--nms-accent-rgb), 0.18);
+  --scrollbar-active-thumb-bg: rgba(var(--nms-accent-rgb), 0.4);
+  --scrollbar-bg:              transparent;
+
+  --graph-line:        rgba(var(--nms-accent-rgb), 0.18);
+  --graph-node:        var(--text-muted);
+  --graph-node-focused: var(--nms-accent);
+  --graph-node-tag:    var(--nms-gold);
+
+  --blockquote-border-color: var(--nms-gold);
+  --blockquote-background-color: rgba(var(--nms-gold-rgb), 0.05);
+
+  --checkbox-color:        var(--nms-accent);
+  --checkbox-color-hover:  color-mix(in srgb, var(--nms-accent), white 18%);
+  --checkbox-border-color: rgba(var(--nms-accent-rgb), 0.5);
+}
+
+/* ============================================================
+   LIGHT MODE  ·  "Daylight Scanner"
+   ============================================================ */
+.theme-light {
+  --background-primary:        #eef4f8;
+  --background-primary-alt:    #e4edf3;
+  --background-secondary:      #e6eef4;
+  --background-secondary-alt:  #dbe6ee;
+
+  --background-modifier-border:        rgba(15, 60, 80, 0.16);
+  --background-modifier-border-hover:  rgba(15, 60, 80, 0.3);
+  --background-modifier-border-focus:  color-mix(in srgb, var(--nms-accent), black 28%);
+  --background-modifier-hover:         rgba(15, 60, 80, 0.05);
+  --background-modifier-active-hover:  rgba(var(--nms-accent-rgb), 0.12);
+  --background-modifier-form-field:    #ffffff;
+  --divider-color:                     rgba(15, 60, 80, 0.12);
+
+  --text-normal:    #14202c;
+  --text-muted:     rgba(20, 32, 44, 0.64);
+  --text-faint:     rgba(20, 32, 44, 0.42);
+  --nms-accent-ink: color-mix(in srgb, var(--nms-accent), black 32%);
+  --nms-gold-ink:   #9a6b00;
+  --text-on-accent: #ffffff;
+  --text-accent:        var(--nms-accent-ink);
+  --text-accent-hover:  color-mix(in srgb, var(--nms-accent), black 45%);
+  --text-selection:     rgba(var(--nms-accent-rgb), 0.2);
+  --text-highlight-bg:  rgba(var(--nms-gold-rgb), 0.32);
+
+  --interactive-accent:        var(--nms-accent-ink);
+  --interactive-accent-hover:  color-mix(in srgb, var(--nms-accent), black 42%);
+  --interactive-normal:        #ffffff;
+  --interactive-hover:         rgba(15, 60, 80, 0.06);
+
+  --h1-color: var(--nms-accent-ink);
+  --h2-color: #0c1722;
+  --h3-color: #0c1722;
+  --h4-color: #102230;
+  --h5-color: #1a2b3a;
+  --h6-color: var(--text-muted);
+
+  --bold-color:   var(--nms-gold-ink);
+  --italic-color: var(--nms-accent-ink);
+
+  --code-background: rgba(15, 60, 80, 0.07);
+  --code-normal:     #0c3142;
+
+  --tag-color:        var(--nms-gold-ink);
+  --tag-background:   rgba(var(--nms-gold-rgb), 0.16);
+  --tag-color-hover:  var(--nms-gold-ink);
+
+  --hr-color: rgba(15, 60, 80, 0.18);
+
+  --titlebar-background:          #e4edf3;
+  --titlebar-background-focused:  #eef4f8;
+  --titlebar-text-color:          var(--text-muted);
+  --ribbon-background:            #e4edf3;
+  --status-bar-background:        #e4edf3;
+  --status-bar-text-color:        var(--text-faint);
+
+  --nav-item-color:               var(--text-muted);
+  --nav-item-color-hover:         #0c1722;
+  --nav-item-color-active:        var(--nms-accent-ink);
+  --nav-item-background-active:   rgba(var(--nms-accent-rgb), 0.14);
+  --nav-indentation-guide-color:  rgba(15, 60, 80, 0.14);
+
+  --icon-color:         var(--text-muted);
+  --icon-color-hover:   #0c1722;
+  --icon-color-active:  var(--nms-accent-ink);
+
+  --scrollbar-thumb-bg:        rgba(15, 60, 80, 0.2);
+  --scrollbar-active-thumb-bg: rgba(var(--nms-accent-rgb), 0.45);
+
+  --graph-line:        rgba(15, 60, 80, 0.18);
+  --graph-node:        var(--text-muted);
+  --graph-node-focused: var(--nms-accent-ink);
+  --graph-node-tag:    var(--nms-gold-ink);
+
+  --blockquote-border-color: var(--nms-gold-ink);
+  --blockquote-background-color: rgba(var(--nms-gold-rgb), 0.08);
+
+  --checkbox-color:        var(--nms-accent-ink);
+  --checkbox-border-color: color-mix(in srgb, var(--nms-accent), black 20%);
+}
+
+/* ============================================================
+   TYPOGRAPHY  ·  headings + HUD chrome
+   ============================================================ */
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
+.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.HyperMD-header, .cm-header,
+.inline-title {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.markdown-rendered h1, .HyperMD-header-1, .cm-header-1, .inline-title {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* HUD chrome — Orbitron, spaced, uppercase */
+.status-bar,
+.workspace-tab-header-inner-title,
+.nav-header .nav-buttons-container,
+.view-header-title-container .view-actions,
+.modal-title,
+.setting-item-heading .setting-item-name {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+}
+.status-bar-item {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.workspace-tab-header-inner-title {
+  letter-spacing: 0.8px;
+}
+
+/* ============================================================
+   ACCENT GLOW  (gated behind .nms-glow, dark mode)
+   ============================================================ */
+.theme-dark.nms-glow .markdown-rendered h1,
+.theme-dark.nms-glow .HyperMD-header-1,
+.theme-dark.nms-glow .cm-header-1,
+.theme-dark.nms-glow .inline-title {
+  text-shadow:
+    0 0 calc(28px * var(--nms-glow-strength) + 6px) rgba(var(--nms-accent-rgb), var(--nms-glow-strength)),
+    0 0 calc(60px * var(--nms-glow-strength)) rgba(var(--nms-accent-rgb), calc(var(--nms-glow-strength) * 0.5));
+}
+.theme-dark.nms-glow button.mod-cta,
+.theme-dark.nms-glow .workspace-tab-header.is-active::before {
+  box-shadow: 0 0 calc(20px * var(--nms-glow-strength)) rgba(var(--nms-accent-rgb), calc(var(--nms-glow-strength) * 0.7));
+}
+.theme-dark.nms-glow .nav-file-title.is-active,
+.theme-dark.nms-glow .nav-folder-title.is-active {
+  box-shadow: inset 2px 0 0 var(--nms-accent), 0 0 18px rgba(var(--nms-accent-rgb), calc(var(--nms-glow-strength) * 0.4));
+}
+.theme-dark.nms-glow input[type="checkbox"]:checked {
+  box-shadow: 0 0 10px rgba(var(--nms-accent-rgb), calc(var(--nms-glow-strength) * 0.9));
+}
+
+/* ============================================================
+   LINKS, CODE, INLINE
+   ============================================================ */
+.markdown-rendered a.internal-link,
+.markdown-rendered a.external-link,
+.cm-link, .cm-url, .cm-hmd-internal-link {
+  color: var(--text-accent);
+  text-decoration-color: rgba(var(--nms-accent-rgb), 0.4);
+}
+.markdown-rendered a:hover { color: var(--text-accent-hover); }
+
+code, .cm-inline-code, .markdown-rendered code {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.88em;
+}
+.markdown-rendered pre,
+.cm-s-obsidian .HyperMD-codeblock {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+}
+.markdown-rendered pre {
+  background: rgba(var(--nms-accent-rgb), 0.04);
+}
+
+/* highlight badge — gold pill, like the design-system .hl */
+.markdown-rendered mark, .cm-highlight {
+  background: rgba(var(--nms-gold-rgb), 0.14);
+  border: 1px solid rgba(var(--nms-gold-rgb), 0.3);
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  color: var(--nms-gold);
+}
+.theme-light .markdown-rendered mark { color: var(--nms-gold-ink); }
+
+/* ============================================================
+   CALLOUTS  ·  HUD framed
+   ============================================================ */
+.callout {
+  border-radius: 0 8px 8px 0;
+  border: none;
+  border-left: 3px solid rgba(var(--callout-color), 1);
+  background: rgba(var(--callout-color), 0.06);
+  mix-blend-mode: normal;
+}
+.callout-title {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 0.84em;
+}
+.theme-dark.nms-glow .callout {
+  box-shadow: -3px 0 16px -6px rgba(var(--callout-color), 0.5);
+}
+/* recolor key callouts to the palette */
+.callout[data-callout="note"]      { --callout-color: var(--nms-accent-rgb); }
+.callout[data-callout="info"]      { --callout-color: var(--nms-accent-rgb); }
+.callout[data-callout="todo"]      { --callout-color: var(--nms-accent-rgb); }
+.callout[data-callout="abstract"]  { --callout-color: var(--nms-accent-rgb); }
+.callout[data-callout="tip"]       { --callout-color: 56, 225, 160; }
+.callout[data-callout="success"]   { --callout-color: 56, 225, 160; }
+.callout[data-callout="question"]  { --callout-color: var(--nms-gold-rgb); }
+.callout[data-callout="warning"]   { --callout-color: var(--nms-gold-rgb); }
+.callout[data-callout="important"] { --callout-color: var(--nms-gold-rgb); }
+.callout[data-callout="danger"]    { --callout-color: 240, 67, 63; }
+.callout[data-callout="bug"]       { --callout-color: 240, 67, 63; }
+.callout[data-callout="quote"]     { --callout-color: var(--nms-gold-rgb); }
+.callout[data-callout="example"]   { --callout-color: 185, 133, 255; }
+
+/* ============================================================
+   TAGS  ·  rounded gold HUD pills
+   ============================================================ */
+.markdown-rendered a.tag,
+.cm-s-obsidian .cm-hashtag {
+  border: 1px solid rgba(var(--nms-gold-rgb), 0.3);
+  border-radius: 11px;
+  padding: 1px 9px;
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  font-size: 0.72em;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+}
+.cm-s-obsidian .cm-hashtag {
+  border-radius: 0;
+  border-left: none; border-right: none;
+}
+.cm-s-obsidian .cm-hashtag-begin { border-radius: 11px 0 0 11px; border-left: 1px solid rgba(var(--nms-gold-rgb),0.3); padding-left: 8px; }
+.cm-s-obsidian .cm-hashtag-end   { border-radius: 0 11px 11px 0; border-right: 1px solid rgba(var(--nms-gold-rgb),0.3); padding-right: 8px; }
+
+/* ============================================================
+   ACTIVE TAB — accent underline (like .tab-btn.active)
+   ============================================================ */
+.workspace-tab-header.is-active {
+  position: relative;
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--text-accent);
+}
+.workspace-tab-header.is-active::after {
+  content: '';
+  position: absolute;
+  left: 8px; right: 8px; bottom: 0;
+  height: 2px;
+  background: var(--nms-accent);
+}
+
+/* ============================================================
+   FILE EXPLORER — folder titles in gold by default
+   ============================================================ */
+.nav-folder-title-content {
+  font-weight: 600;
+}
+.theme-dark .nav-folder > .nav-folder-title .nav-folder-title-content { color: color-mix(in srgb, var(--nms-gold), var(--text-normal) 35%); }
+.theme-light .nav-folder > .nav-folder-title .nav-folder-title-content { color: var(--nms-gold-ink); }
+
+/* rainbow biome folders */
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+1) > .nav-folder-title .nav-folder-title-content { color: #00e5ff; }
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+2) > .nav-folder-title .nav-folder-title-content { color: #9de24f; }
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+3) > .nav-folder-title .nav-folder-title-content { color: #f0a500; }
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+4) > .nav-folder-title .nav-folder-title-content { color: #e86fb4; }
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+5) > .nav-folder-title .nav-folder-title-content { color: #b985ff; }
+body.nms-rainbow-folders .nav-folder.mod-root > .nav-folder-children > .nav-folder:nth-of-type(6n+6) > .nav-folder-title .nav-folder-title-content { color: #38e1a0; }
+
+/* ============================================================
+   HUD GRID BACKGROUND  (gated behind .nms-grid)
+   ============================================================ */
+body.nms-grid .markdown-source-view .cm-scroller,
+body.nms-grid .markdown-reading-view,
+body.nms-grid .empty-state {
+  background-image:
+    linear-gradient(rgba(var(--nms-accent-rgb), 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--nms-accent-rgb), 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+body.nms-grid.nms-grid-animate .markdown-source-view .cm-scroller,
+body.nms-grid.nms-grid-animate .markdown-reading-view {
+  animation: nmsGridMove 22s linear infinite;
+}
+@keyframes nmsGridMove { to { background-position: 64px 64px, 64px 64px; } }
+
+/* ============================================================
+   SCANLINES + VIGNETTE overlays
+   ============================================================ */
+.app-container { position: relative; }
+body.nms-scanlines .app-container::after {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg,
+    transparent, transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px);
+}
+body.nms-vignette .app-container::before {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: 39;
+  pointer-events: none;
+  box-shadow: inset 0 0 220px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================
+   GALAXY BACKGROUND IMAGE  (dark mode)
+   Nebula behind the workspace; panes translucent over it,
+   editor keeps a dark scrim (--nms-galaxy-dim) for readability.
+   ============================================================ */
+body.theme-dark { --nms-galaxy-img: url("data:image/jpeg;base64,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"); }
+body.theme-dark,
+body.theme-dark .app-container,
+body.theme-dark .workspace {
+  background-image:
+    linear-gradient(rgba(7, 11, 17, 0.55), rgba(7, 11, 17, 0.66)),
+    var(--nms-galaxy-img);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.theme-dark {
+  --background-primary:        rgba(7, 11, 17, var(--nms-galaxy-dim));
+  --background-primary-alt:    rgba(10, 15, 23, var(--nms-galaxy-dim));
+  --background-secondary:      rgba(8, 12, 19, calc(var(--nms-galaxy-dim) - 0.18));
+  --background-secondary-alt:  rgba(12, 18, 30, calc(var(--nms-galaxy-dim) - 0.08));
+}
+/* single scrim layer — keep inner editor transparent so it doesn't stack */
+body.theme-dark .markdown-source-view,
+body.theme-dark .markdown-reading-view,
+body.theme-dark .cm-editor,
+body.theme-dark .cm-scroller,
+body.theme-dark .workspace-leaf-content,
+body.theme-dark .view-content,
+body.theme-dark .markdown-preview-view,
+body.theme-dark .empty-state {
+  background-color: transparent !important;
+}
+body.theme-dark .markdown-source-view,
+body.theme-dark .markdown-reading-view {
+  text-shadow: 0 1px 4px rgba(2, 5, 10, 0.7);
+}
+/* let the nebula show fully on empty / new-tab views */
+body.theme-dark .empty-state {
+  background-color: transparent;
+}
+/* keep code blocks legible over the nebula */
+body.theme-dark .markdown-rendered pre,
+body.theme-dark .cm-s-obsidian .HyperMD-codeblock {
+  background-color: rgba(5, 8, 13, 0.72);
+}
+
+body.theme-dark .workspace-split,
+body.theme-dark .workspace-tabs,
+body.theme-dark .workspace-leaf { background-color: transparent !important; }
+/* opt-out via Style Settings "Disable galaxy background" */
+body.nms-galaxy-off.theme-dark .app-container { background-image: none !important; }
+body.nms-galaxy-off.theme-dark {
+  --background-primary:        #070b11;
+  --background-primary-alt:    #0a0f17;
+  --background-secondary:      #0a0f17;
+  --background-secondary-alt:  #0f1620;
+}
+
+/* ============================================================
+   BUTTONS — primary accent (mod-cta)
+   ============================================================ */
+button.mod-cta, .mod-cta {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.78em;
+  border-radius: 8px;
+}
+
+/* ============================================================
+   TRANSLUCENT PANELS + HIDE BORDERS + READABLE HEADINGS
+   ============================================================ */
+body.nms-translucent .workspace-split.mod-left-split,
+body.nms-translucent .workspace-split.mod-right-split {
+  background: rgba(10, 15, 23, 0.6);
+  backdrop-filter: blur(14px);
+}
+body.nms-translucent.theme-light .workspace-split.mod-left-split,
+body.nms-translucent.theme-light .workspace-split.mod-right-split {
+  background: rgba(230, 238, 244, 0.6);
+}
+
+body.nms-hide-borders {
+  --divider-color: transparent;
+}
+body.nms-hide-borders .workspace-tab-header-container,
+body.nms-hide-borders .view-header,
+body.nms-hide-borders .status-bar {
+  border-color: transparent !important;
+}
+
+body.nms-readable-headings {
+  --h1-color: var(--nms-white);
+}
+body.nms-readable-headings.theme-light { --h1-color: #0c1722; }
+body.nms-readable-headings .markdown-rendered h1,
+body.nms-readable-headings .HyperMD-header-1,
+body.nms-readable-headings .cm-header-1,
+body.nms-readable-headings .inline-title {
+  font-family: var(--nms-font-ui), var(--font-interface);
+  font-weight: 600;
+  text-shadow: none !important;
+}
+
+/* ============================================================
+   MISC POLISH
+   ============================================================ */
+.markdown-rendered blockquote { border-radius: 0 8px 8px 0; }
+hr { border-top-width: 1px; }
+
+.suggestion-item.is-selected,
+.prompt-results .is-selected {
+  background: rgba(var(--nms-accent-rgb), 0.12);
+}
+.search-result-file-match:hover { background: rgba(var(--nms-accent-rgb), 0.08); }
+
+::selection { background: var(--text-selection); }
+
+.graph-view.color-fill-focused { color: var(--nms-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  body.nms-grid.nms-grid-animate .markdown-source-view .cm-scroller,
+  body.nms-grid.nms-grid-animate .markdown-reading-view {
+    animation: none;
+  }
+}
+
+/* No Man's Sky — Atlas · v1.1 (galaxy background, embedded) */
+
+
+/* ============================================================
+   NMS (Korvax) ALPHABET — embedded font
+   ============================================================ */
+@font-face {
+  font-family: 'NMS Alphabet';
+  src: url("data:font/ttf;base64,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AAEAAAAABKoEqgAEAAABAQEBAQAAAAACqgIAAAAAAAIAAqoAAPtWAAACAAACqgSqB1UAAwAHAAABAQEBAQEBAQAAAAAEqgAA+1YAAAIAAAACqgIAAAD+AAKrAgAAAP4AAAIAAAAABKoHVQADAAcAAAEBAQEBAQEBAAAAAAIAAAAAqgAAAgAAAAAABKoAAPtWBVUCAAAA/gAAAgAAAAAEqgdVAAMACAAAAQEBAQEBAQEBAAAAAAIAAAD+AAAABKoAAP1WAAACAAAA/gACqgSrAAD+AP1VAAAAAAIAqgAAAqoEqgADAAcAAAEBAQEBAQEBAKoAAAIAAAD+AAAAAgAAAAAAAgAAAP4AAqoCAAAA/gAAAgAAAAAEqgSqAAMABwAAAQEBAQEBAQECqgAAAgAAAPtWAAAEqgAAAAACAAAA/gACqgIAAAD+AAACAAAAAASqB1UAAwAHAAABAQEBAQEBAQKqAAACAAAA+1YAAAIAAAAAAASqAAD7VgVVAgAAAP4AAAEAAAAABKoEqgAFAAABAQEBAQEAAAAAA1UBVQAA/KsAAAFVA1UAAP6r/KsAAgAAAAAEqgSqAAMABwAAAQEBAQEBAQEAAAAAAgAAAACqAAACAAAAAAAEqgAA+1YAAASqAAD7VgACAKoAAAKqB1UAAwAHAAABAQEBAQEBAQCqAAACAAAA/gAAAAIAAAAAAASqAAD7VgVVAgAAAP4AAAEAAAAABKoEqgAFAAABAQEBAQEAAAAABKoAAP1WAAAAAASqAAD+AAAA/VYAAQAAAAAEqgSqAAcAAAEBAQEBAQEBAAAAAAKqAgAAAP4AAAD+qwAAAgACqgAA+1YAAAFV/qsAAAACAAAAAASqBKoAAwAHAAABAQEBAQEBAQKqAAACAAAA+1YAAAIAAAAAAAIAAAD+AAAABKoAAPtWAAMAAAAABKoEqgADAAcACwAAAQEBAQEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAACqAAACAAAAAAACAAAA/gAAAASqAAD7VgKqAgAAAP4AAAAAAQAAAAAEqgSqAAcAAAEBAQEBAQEBAAAAAAFV/qsAAASqAAD9VgAAAVUBVQAAAgAAAP4A/VYAAAABAAACqgSqBKoAAwAAAQEBAQAAAAAEqgAAAqoCAAAA/gAAAAACAAAAAASqB1UAAwAHAAABAQEBAQEBAQKqAAACAAAA+1YAAAIAAAAAAAIAAAD+AAKqBKsAAPtVAAIAAAAABKoEqgADAAcAAAEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAAAAAgAAAP4AAqoCAAAA/gAAAwAAAAAEqgdVAAMABwALAAABAQEBAQEBAQEBAQECqgAAAgAAAPtWAAACAAAAAKoAAAIAAAAAAAIAAAD+AAKqAgAAAP4AAqsCAAAA/gAAAAACAAAAAASqB1UAAwAJAAABAQEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAAKqAAAAAAIAAAD+AAKqBKsAAP1VAAD+AAAAAAEAAAKqBKoHVQAFAAABAQEBAQECqgAA/VYAAASqAAACqgKrAAACAAAA+1UAAwAAAAAEqgSqAAMABwALAAABAQEBAQEBAQEBAQEAAAAAAgAAAACqAAACAAAA+1YAAASqAAAAAAIAAAD+AAAAAgAAAP4AAqoCAAAA/gAAAAABAAAAAASqBKoABwAAAQEBAQEBAQEAAAAAAgACqgAA/qv+qwAAAAAEqgAA/Vb+AAAAAVX+qwAAAAEAAAAABKoEqgAEAAABAQEBAQAAAAAEqgAA/VYAAASqAAD+AP1WAAACAAAAAASqBKoAAwAHAAABAQEBAQEBAQAAAAAEqgAA+1YAAASqAAAAAAIAAAD+AAKqAgAAAP4AAAIAAAAABKoEqgADAAcAAAEBAQEBAQEBAAAAAAIAAAAAqgAAAgAAAAAABKoAAPtWAqoCAAAA/gAAAQAAAAAEqgSqAAQAAAEBAQEBAAAAAAKqAgAAAAAAAgACqgAA+1YAAAIAAAKqBKoHVQADAAcAAAEBAQEBAQEBAAAAAASqAAD7VgAAAgAAAAKqAgAAAP4AAqsCAAAA/gAAAgAAAAAEqgdVAAMABwAAAQEBAQEBAQEAAAAAAgAAAACqAAACAAAAAAAEqgAA+1YFVQIAAAD+AAACAAAAAASqB1UAAwAIAAABAQEBAQEBAQEAAAAAAgAAAP4AAAAEqgAA/VYAAAIAAAD+AAKqBKsAAP4A/VUAAAAAAgCqAAACqgSqAAMABwAAAQEBAQEBAQEAqgAAAgAAAP4AAAACAAAAAAACAAAA/gACqgIAAAD+AAACAAAAAASqBKoAAwAHAAABAQEBAQEBAQKqAAACAAAA+1YAAASqAAAAAAIAAAD+AAKqAgAAAP4AAAIAAAAABKoHVQADAAcAAAEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAAAABKoAAPtWBVUCAAAA/gAAAQAAAAAEqgSqAAUAAAEBAQEBAQAAAAADVQFVAAD8qwAAAVUDVQAA/qv8qwACAAAAAASqBKoAAwAHAAABAQEBAQEBAQAAAAACAAAAAKoAAAIAAAAAAASqAAD7VgAABKoAAPtWAAIAqgAAAqoHVQADAAcAAAEBAQEBAQEBAKoAAAIAAAD+AAAAAgAAAAAABKoAAPtWBVUCAAAA/gAAAQAAAAAEqgSqAAUAAAEBAQEBAQAAAAAEqgAA/VYAAAAABKoAAP4AAAD9VgABAAAAAASqBKoABwAAAQEBAQEBAQEAAAAAAqoCAAAA/gAAAP6rAAACAAKqAAD7VgAAAVX+qwAAAAIAAAAABKoEqgADAAcAAAEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAAAAAgAAAP4AAAAEqgAA+1YAAwAAAAAEqgSqAAMABwALAAABAQEBAQEBAQEBAQECqgAAAgAAAPtWAAACAAAAAKoAAAIAAAAAAAIAAAD+AAAABKoAAPtWAqoCAAAA/gAAAAABAAAAAASqBKoABwAAAQEBAQEBAQEAAAAAAVX+qwAABKoAAP1WAAABVQFVAAACAAAA/gD9VgAAAAEAAAKqBKoEqgADAAABAQEBAAAAAASqAAACqgIAAAD+AAAAAAIAAAAABKoHVQADAAcAAAEBAQEBAQEBAqoAAAIAAAD7VgAAAgAAAAAAAgAAAP4AAqoEqwAA+1UAAgAAAAAEqgSqAAMABwAAAQEBAQEBAQECqgAAAgAAAPtWAAACAAAAAAACAAAA/gACqgIAAAD+AAADAAAAAASqB1UAAwAHAAsAAAEBAQEBAQEBAQEBAQKqAAACAAAA+1YAAAIAAAAAqgAAAgAAAAAAAgAAAP4AAqoCAAAA/gACqwIAAAD+AAAAAAIAAAAABKoHVQADAAkAAAEBAQEBAQEBAQECqgAAAgAAAPtWAAACAAAAAqoAAAAAAgAAAP4AAqoEqwAA/VUAAP4AAAAAAQAAAqoEqgdVAAUAAAEBAQEBAQKqAAD9VgAABKoAAAKqAqsAAAIAAAD7VQADAAAAAASqBKoAAwAHAAsAAAEBAQEBAQEBAQEBAQAAAAACAAAAAKoAAAIAAAD7VgAABKoAAAAAAgAAAP4AAAACAAAA/gACqgIAAAD+AAAAAAAAAQAAABoAAQACAAwAAQAAABAAJgAAADAALgAAAAAAAAAgAYYAAQAAAAAAAAAZAAAAAQAAAAAAAQAMABkAAQAAAAAAAgAHACUAAQAAAAAAAwAMACwAAQAAAAAABAAUADgAAQAAAAAABQADAEwAAQAAAAAABgAMAE8AAQAAAAAABwArAFsAAQAAAAAACAAWAIYAAQAAAAAACQAKAJwAAQAAAAAACgAoAKYAAQAAAAAACwBBAM4AAQAAAAAADAA8AQ8AAQAAAAAADQASAUsAAQAAAAAAEwApAV0AAQAAAAABAAAMAYYAAwABBAkAAAAyAZIAAwABBAkAAQAYAcQAAwABBAkAAgAOAdwAAwABBAkAAwAYAeoAAwABBAkABAAoAgIAAwABBAkABQAGAioAAwABBAkABgAYAjAAAwABBAkABwBWAkgAAwABBAkACAAsAp4AAwABBAkACQAUAsoAAwABBAkACgBSAt4AAwABBAkACwCCAzAAAwABBAkADAB4A7IAAwABBAkADQAkBCoAAwABBAkAEwBSBE4AAwABBAkBAAAYBKBDb3B5cmlnaHQgc2VvbnRvbnBwYSAyMDIyTk1TIEFscGhhYmV0UmVndWxhck5NUyBBbHBoYWJldE5NUyBBbHBoYWJldCBSZWd1bGFyMS4wTk1TLUFscGhhYmV0Rm9udFN0cnVjdCBpcyBhIHRyYWRlbWFyayBvZiBGb250U3RydWN0LmNvbWh0dHBzOi8vZm9udHN0cnVjdC5jb21zZW9udG9ucHBh0k5NUyBBbHBoYWJldNMgd2FzIGJ1aWx0IHdpdGggRm9udFN0cnVjdGh0dHBzOi8vZm9udHN0cnVjdC5jb20vZm9udHN0cnVjdGlvbnMvc2hvdy8yMTQ3NjYxL25tcy1hbHBoYWJldC0xaHR0cHM6Ly9mb250c3RydWN0LmNvbS9mb250c3RydWN0b3JzL3Nob3cvMjE0NjU3OS9zZW9udG9ucHBhRm9udFN0cnVjdCBMaWNlbnNlRml2ZSBiaWcgcXVhY2tpbmcgemVwaHlycyBqb2x0IG15IHdheCBiZWRBQWdNY2w5aVh3PT0AQwBvAHAAeQByAGkAZwBoAHQAIABzAGUAbwBuAHQAbwBuAHAAcABhACAAMgAwADIAMgBOAE0AUwAgAEEAbABwAGgAYQBiAGUAdABSAGUAZwB1AGwAYQByAE4ATQBTACAAQQBsAHAAaABhAGIAZQB0AE4ATQBTACAAQQBsAHAAaABhAGIAZQB0ACAAUgBlAGcAdQBsAGEAcgAxAC4AMABOAE0AUwAtAEEAbABwAGgAYQBiAGUAdABGAG8AbgB0AFMAdAByAHUAYwB0ACAAaQBzACAAYQAgAHQAcgBhAGQAZQBtAGEAcgBrACAAbwBmACAARgBvAG4AdABTAHQAcgB1AGMAdAAuAGMAbwBtAGgAdAB0AHAAcwA6AC8ALwBmAG8AbgB0AHMAdAByAHUAYwB0AC4AYwBvAG0AcwBlAG8AbgB0AG8AbgBwAHAAYSAcAE4ATQBTACAAQQBsAHAAaABhAGIAZQB0IB0AIAB3AGEAcwAgAGIAdQBpAGwAdAAgAHcAaQB0AGgAIABGAG8AbgB0AFMAdAByAHUAYwB0AAoAaAB0AHQAcABzADoALwAvAGYAbwBuAHQAcwB0AHIAdQBjAHQALgBjAG8AbQAvAGYAbwBuAHQAcwB0AHIAdQBjAHQAaQBvAG4AcwAvAHMAaABvAHcALwAyADEANAA3ADYANgAxAC8AbgBtAHMALQBhAGwAcABoAGEAYgBlAHQALQAxAGgAdAB0AHAAcwA6AC8ALwBmAG8AbgB0AHMAdAByAHUAYwB0AC4AYwBvAG0ALwBmAG8AbgB0AHMAdAByAHUAYwB0AG8AcgBzAC8AcwBoAG8AdwAvADIAMQA0ADYANQA3ADkALwBzAGUAbwBuAHQAbwBuAHAAcABhAEYAbwBuAHQAUwB0AHIAdQBjAHQAIABMAGkAYwBlAG4AcwBlAEYAaQB2AGUAIABiAGkAZwAgAHEAdQBhAGMAawBpAG4AZwAgAHoAZQBwAGgAeQByAHMAIABqAG8AbAB0ACAAbQB5ACAAdwBhAHgAIABiAGUAZABBAEEAZwBNAGMAbAA5AGkAWAB3AD0APQAAAAMAAAAAAAAAzABmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAoAHgAsAAFsYXRuAAgABAAAAAD//wABAAAAAWtlcm4ACAAAAAEAAAABAAQAAgAAAAEACAABABoABAAAAAIADgAUAAEAJgAAAAEALgAAAAEAAgAQADAAAAAAAAEAAAAA") format("truetype");
+  font-display: swap;
+}
+
+/* ============================================================
+   GLYPH HEADINGS — alien by default, hover to translate (dark+light)
+   Applies to reading-view headings, note title, callout titles, tags.
+   Live-editing heading text stays English so it remains editable.
+   ============================================================ */
+body:not(.nms-no-glyphs) .markdown-reading-view h1,
+body:not(.nms-no-glyphs) .markdown-reading-view h2,
+body:not(.nms-no-glyphs) .markdown-reading-view h3,
+body:not(.nms-no-glyphs) .markdown-reading-view h4,
+body:not(.nms-no-glyphs) .markdown-reading-view h5,
+body:not(.nms-no-glyphs) .markdown-reading-view h6,
+body:not(.nms-no-glyphs) .inline-title,
+body:not(.nms-no-glyphs) .callout-title-inner,
+body:not(.nms-no-glyphs) .markdown-rendered a.tag {
+  font-family: 'NMS Alphabet', var(--nms-font-heading), 'Orbitron', sans-serif !important;
+  letter-spacing: 0.04em;
+}
+body:not(.nms-no-glyphs) .markdown-reading-view h1:hover,
+body:not(.nms-no-glyphs) .markdown-reading-view h2:hover,
+body:not(.nms-no-glyphs) .markdown-reading-view h3:hover,
+body:not(.nms-no-glyphs) .markdown-reading-view h4:hover,
+body:not(.nms-no-glyphs) .markdown-reading-view h5:hover,
+body:not(.nms-no-glyphs) .markdown-reading-view h6:hover,
+body:not(.nms-no-glyphs) .inline-title:hover,
+body:not(.nms-no-glyphs) .inline-title:focus,
+body:not(.nms-no-glyphs) .callout-title-inner:hover,
+body:not(.nms-no-glyphs) .markdown-rendered a.tag:hover {
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+}
+
+/* ============================================================
+   SEAMLESS GALAXY — remove hard pane edges (the "sharp edges")
+   ============================================================ */
+body.theme-dark:not(.nms-galaxy-off) {
+  --divider-color: transparent;
+}
+body.theme-dark:not(.nms-galaxy-off) .workspace-tab-header-container,
+body.theme-dark:not(.nms-galaxy-off) .workspace-tabs .workspace-tab-header,
+body.theme-dark:not(.nms-galaxy-off) .workspace-tab-header.is-active,
+body.theme-dark:not(.nms-galaxy-off) .view-header,
+body.theme-dark:not(.nms-galaxy-off) .status-bar,
+body.theme-dark:not(.nms-galaxy-off) .titlebar,
+body.theme-dark:not(.nms-galaxy-off) .workspace-ribbon {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+body.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-left-split,
+body.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-right-split,
+body.theme-dark:not(.nms-galaxy-off) .workspace-sidedock-vault-profile {
+  --background-secondary: transparent;
+  background: transparent !important;
+}
+
+
+/* ============================================================
+   ATLAS BOOT SPLASH  (plays on vault open; safe-hidden if
+   animations are off, never blocks clicks)
+   ============================================================ */
+body.theme-dark:not(.nms-no-boot)::before {
+  content: "Establishing link";
+  position: fixed; inset: 0; z-index: 9000;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: calc(50vh - 76px);
+  background: radial-gradient(circle at 50% 45%, rgba(7,11,17,0.86), rgba(3,5,9,0.97));
+  color: #4fedd4; font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.35em; font-size: 12px; text-transform: uppercase;
+  opacity: 0; pointer-events: none;
+  animation: nmsBoot 2.2s ease-in-out 0.2s 1 forwards;
+}
+body.theme-dark:not(.nms-no-boot)::after {
+  content: ""; position: fixed; z-index: 9001;
+  top: 50%; left: 50%; width: 112px; height: 112px; transform: translate(-50%, -50%);
+  border: 1px solid rgba(0, 229, 255, 0.55); border-radius: 50%;
+  opacity: 0; pointer-events: none;
+  animation: nmsBootRing 2.2s ease-out 0.2s 1 forwards;
+}
+@keyframes nmsBoot { 0% { opacity: 0; } 14% { opacity: 1; } 76% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes nmsBootRing { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.5); } 25% { opacity: 1; } 80% { opacity: 0.7; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.5); visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { body.theme-dark::before, body.theme-dark:not(.nms-no-boot)::after { display: none !important; } }
+
+/* ============================================================
+   HUD CORNER BRACKETS on the active editor note
+   ============================================================ */
+body.theme-dark .workspace-split.mod-root .view-content { position: relative; }
+body.theme-dark:not(.nms-galaxy-off):not(.nms-no-brackets) .workspace-split.mod-root .workspace-leaf.mod-active .view-content::before,
+body.theme-dark:not(.nms-galaxy-off):not(.nms-no-brackets) .workspace-split.mod-root .workspace-leaf.mod-active .view-content::after {
+  content: ""; position: absolute; width: 16px; height: 16px; pointer-events: none; z-index: 6; opacity: 0.45;
+}
+body.theme-dark:not(.nms-galaxy-off):not(.nms-no-brackets) .workspace-split.mod-root .workspace-leaf.mod-active .view-content::before {
+  top: 10px; left: 10px; border-top: 1px solid rgba(0,229,255,0.6); border-left: 1px solid rgba(0,229,255,0.6);
+}
+body.theme-dark:not(.nms-galaxy-off):not(.nms-no-brackets) .workspace-split.mod-root .workspace-leaf.mod-active .view-content::after {
+  bottom: 10px; right: 10px; border-bottom: 1px solid rgba(0,229,255,0.6); border-right: 1px solid rgba(0,229,255,0.6);
+}
+
+/* ============================================================
+   STATUS BAR — HUD readout markers
+   ============================================================ */
+body.theme-dark .status-bar-item.mod-clickable::before {
+  content: "\25B8\00a0"; color: var(--nms-gold); opacity: 0.8;
+}
+
+/* ============================================================
+   INTERACTION-PROMPT — link hover glow (gold)
+   ============================================================ */
+body.theme-dark .markdown-rendered a.internal-link:hover,
+body.theme-dark .markdown-rendered a.external-link:hover,
+body.theme-dark .cm-s-obsidian .cm-hmd-internal-link:hover {
+  color: var(--nms-gold);
+  text-shadow: 0 0 8px rgba(var(--nms-gold-rgb), 0.5);
+}
+
+/* ============================================================
+   TITLE SCAN-IN reveal on note open
+   ============================================================ */
+.inline-title { animation: nmsTitleIn 0.55s ease both; }
+@keyframes nmsTitleIn { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+
+/* ============================================================
+   HUD TOASTS — styles all Obsidian notices (e.g. discovery toast)
+   ============================================================ */
+body.theme-dark .notice {
+  background: rgba(8, 12, 19, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-left: 3px solid var(--nms-accent);
+  border-radius: 6px;
+  color: var(--text-normal);
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.16);
+}
+
+
+/* ============================================================
+   GALAXY BACKDROP VARIANTS  (recolor the nebula via blend)
+   ============================================================ */
+body.theme-dark.nms-backdrop-toxic,
+body.theme-dark.nms-backdrop-toxic .app-container,
+body.theme-dark.nms-backdrop-toxic .workspace {
+  background-image: linear-gradient(rgba(7,11,17,0.55), rgba(7,11,17,0.66)), linear-gradient(#1f8a46,#1f8a46), var(--nms-galaxy-img);
+  background-blend-mode: normal, color, normal;
+}
+body.theme-dark.nms-backdrop-scorched,
+body.theme-dark.nms-backdrop-scorched .app-container,
+body.theme-dark.nms-backdrop-scorched .workspace {
+  background-image: linear-gradient(rgba(7,11,17,0.55), rgba(7,11,17,0.66)), linear-gradient(#b23a1c,#b23a1c), var(--nms-galaxy-img);
+  background-blend-mode: normal, color, normal;
+}
+body.theme-dark.nms-backdrop-frozen,
+body.theme-dark.nms-backdrop-frozen .app-container,
+body.theme-dark.nms-backdrop-frozen .workspace {
+  background-image: linear-gradient(rgba(7,11,17,0.55), rgba(7,11,17,0.66)), linear-gradient(#1f6fa8,#1f6fa8), var(--nms-galaxy-img);
+  background-blend-mode: normal, color, normal;
+}
+body.theme-dark.nms-backdrop-irradiated,
+body.theme-dark.nms-backdrop-irradiated .app-container,
+body.theme-dark.nms-backdrop-irradiated .workspace {
+  background-image: linear-gradient(rgba(7,11,17,0.55), rgba(7,11,17,0.66)), linear-gradient(#b58416,#b58416), var(--nms-galaxy-img);
+  background-blend-mode: normal, color, normal;
+}
+
+/* ============================================================
+   FOCUS / WRITING MODE  (calms the galaxy + reverts glyphs)
+   ============================================================ */
+body.theme-dark.nms-focus,
+body.theme-dark.nms-focus .app-container,
+body.theme-dark.nms-focus .workspace {
+  background-image: linear-gradient(rgba(7,11,17,0.83), rgba(7,11,17,0.89)), var(--nms-galaxy-img);
+}
+body.nms-focus .markdown-reading-view h1,
+body.nms-focus .markdown-reading-view h2,
+body.nms-focus .markdown-reading-view h3,
+body.nms-focus .markdown-reading-view h4,
+body.nms-focus .markdown-reading-view h5,
+body.nms-focus .markdown-reading-view h6,
+body.nms-focus .inline-title,
+body.nms-focus .callout-title-inner,
+body.nms-focus .markdown-rendered a.tag {
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+}
+
+
+/* ============================================================
+   NMS CALLOUT SET  (use > [!atlas], > [!sentinel], etc.)
+   ============================================================ */
+.callout[data-callout="atlas"]     { --callout-color: 240, 67, 63;  --callout-icon: lucide-diamond; }
+.callout[data-callout="sentinel"]  { --callout-color: 240, 165, 0;  --callout-icon: lucide-eye; }
+.callout[data-callout="korvax"]    { --callout-color: 0, 229, 255;  --callout-icon: lucide-cpu; }
+.callout[data-callout="vykeen"]    { --callout-color: 240, 67, 63;  --callout-icon: lucide-swords; }
+.callout[data-callout="gek"]       { --callout-color: 56, 225, 160; --callout-icon: lucide-sprout; }
+.callout[data-callout="traveller"] { --callout-color: 185, 133, 255;--callout-icon: lucide-rocket; }
+.callout[data-callout="anomaly"]   { --callout-color: 0, 229, 255;  --callout-icon: lucide-radar; }
+.callout[data-callout="scan"]      { --callout-color: 56, 225, 160; --callout-icon: lucide-scan-line; }
+
+/* ============================================================
+   SCANNER CHECKBOXES  (square HUD style)
+   ============================================================ */
+body.theme-dark input[type="checkbox"] {
+  border-radius: 3px;
+}
+body.theme-dark.nms-glow input[type="checkbox"]:checked {
+  box-shadow: 0 0 9px rgba(var(--nms-accent-rgb), calc(var(--nms-glow-strength) * 0.9));
+}
+
+/* ============================================================
+   HUD CODE BLOCKS + TABLES (terminal readout)
+   ============================================================ */
+body.theme-dark .markdown-rendered pre {
+  border-left: 2px solid rgba(var(--nms-accent-rgb), 0.45);
+}
+body.theme-dark .markdown-rendered table {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+body.theme-dark .markdown-rendered thead th {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--nms-white);
+  border-bottom: 1px solid rgba(var(--nms-accent-rgb), 0.4);
+  background: rgba(var(--nms-accent-rgb), 0.05);
+}
+body.theme-dark .markdown-rendered tbody td {
+  border-color: rgba(var(--nms-accent-rgb), 0.12);
+}
+
+
+/* ============================================================
+   FULL IMMERSION GLYPHS  (nav + tabs + status bar; hover = English)
+   ============================================================ */
+body.nms-glyphs-all .nav-file-title-content,
+body.nms-glyphs-all .nav-folder-title-content,
+body.nms-glyphs-all .workspace-tab-header-inner-title,
+body.nms-glyphs-all .status-bar-item {
+  font-family: 'NMS Alphabet', var(--nms-font-heading), monospace !important;
+}
+body.nms-glyphs-all .nav-file-title:hover .nav-file-title-content,
+body.nms-glyphs-all .nav-folder-title:hover .nav-folder-title-content,
+body.nms-glyphs-all .workspace-tab-header:hover .workspace-tab-header-inner-title,
+body.nms-glyphs-all .status-bar-item:hover {
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+}
