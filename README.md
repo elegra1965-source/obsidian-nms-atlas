@@ -48,6 +48,6 @@ Everything works at sensible defaults even without Style Settings; the plugin ju
 ## Notes & credits
 
 - UI fonts (Orbitron, Rajdhani) load from Google Fonts on first run. The NMS alphabet font and the galaxy image are embedded in `theme.css`.
-- Font used with permission from seontonppa.
+- NMS Alphabet font used with permission from seontonppa.
 - Unofficial fan project, inspired by No Man's Sky (Hello Games); not affiliated or endorsed. See `LICENSE` (MIT) and the note about bundled assets before redistributing.
 - To publish to the Obsidian community themes list, see `PUBLISHING.md`.
