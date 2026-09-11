@@ -1,0 +1,52 @@
+/* ============================================================
+   NMS Glyph Translate — reusable component
+   Renders text in the NMS (Korvax) alphabet and reveals English
+   on hover/focus. Drop into any No Man's Sky-themed project.
+
+   SETUP
+   1. Put the font at: assets/nms-alphabet.ttf  (or edit the url below)
+   2. Link this file:  <link rel="stylesheet" href="nms-glyph-translate.css">
+   3. Add class "nms-glyph" to any heading/label you want in glyphs:
+        <h1 class="nms-glyph">Korvax Archive</h1>
+        <span class="nms-glyph">Discoveries</span>
+
+   The element shows alien glyphs by default and switches to English
+   on hover/focus. Keep body/paragraph text WITHOUT the class so it
+   stays readable. For the animated scramble-decode effect, also load
+   nms-glyph-translate.js (optional).
+   ============================================================ */
+
+@font-face {
+  font-family: 'NMS Alphabet';
+  src: url('assets/nms-alphabet.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Base: render in the alien alphabet */
+.nms-glyph {
+  font-family: 'NMS Alphabet', 'Orbitron', monospace;
+  letter-spacing: 0.04em;
+  cursor: default;
+}
+
+/* Reveal English on hover / keyboard focus */
+.nms-glyph:hover,
+.nms-glyph:focus,
+.nms-glyph:focus-within {
+  font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+}
+
+/* Optional: keep a label permanently English (escape hatch) */
+.nms-glyph.is-english {
+  font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif !important;
+}
+
+/* Optional: reveal-all toggle — add .nms-reveal-all to <body> or a wrapper */
+.nms-reveal-all .nms-glyph {
+  font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif !important;
+}
+
+/* Pure-CSS boot flicker (no JS): fades a heading in once on load.
+   For the real per-letter scramble decode, use nms-glyph-translate.js. */
+@keyframes nmsBoot { 0% { opacity: 0; } 100% { opacity: 1; } }
+.nms-boot { animation: nmsBoot 0.6s ease both; }
