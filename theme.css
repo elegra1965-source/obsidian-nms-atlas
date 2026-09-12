@@ -673,15 +673,15 @@ body.theme-dark {
   --background-secondary-alt:  rgba(12, 18, 30, calc(var(--nms-galaxy-dim) - 0.08));
 }
 /* single scrim layer — keep inner editor transparent so it doesn't stack */
-body.theme-dark .markdown-source-view,
-body.theme-dark .markdown-reading-view,
-body.theme-dark .cm-editor,
-body.theme-dark .cm-scroller,
-body.theme-dark .workspace-leaf-content,
-body.theme-dark .view-content,
-body.theme-dark .markdown-preview-view,
-body.theme-dark .empty-state {
-  background-color: transparent !important;
+body.theme-dark.theme-dark .markdown-source-view,
+body.theme-dark.theme-dark .markdown-reading-view,
+body.theme-dark.theme-dark .cm-editor,
+body.theme-dark.theme-dark .cm-scroller,
+body.theme-dark.theme-dark .workspace-leaf-content,
+body.theme-dark.theme-dark .view-content,
+body.theme-dark.theme-dark .markdown-preview-view,
+body.theme-dark.theme-dark .empty-state {
+  background-color: transparent;
 }
 body.theme-dark .markdown-source-view,
 body.theme-dark .markdown-reading-view {
@@ -697,11 +697,11 @@ body.theme-dark .cm-s-obsidian .HyperMD-codeblock {
   background-color: rgba(5, 8, 13, 0.72);
 }
 
-body.theme-dark .workspace-split,
-body.theme-dark .workspace-tabs,
-body.theme-dark .workspace-leaf { background-color: transparent !important; }
+body.theme-dark.theme-dark .workspace-split,
+body.theme-dark.theme-dark .workspace-tabs,
+body.theme-dark.theme-dark .workspace-leaf { background-color: transparent; }
 /* opt-out via Style Settings "Disable galaxy background" */
-body.nms-galaxy-off.theme-dark .app-container { background-image: none !important; }
+body.nms-galaxy-off.theme-dark.theme-dark .app-container { background-image: none; }
 body.nms-galaxy-off.theme-dark {
   --background-primary:        #070b11;
   --background-primary-alt:    #0a0f17;
@@ -737,23 +737,23 @@ body.nms-translucent.theme-light .workspace-split.mod-right-split {
 body.nms-hide-borders {
   --divider-color: transparent;
 }
-body.nms-hide-borders .workspace-tab-header-container,
-body.nms-hide-borders .view-header,
-body.nms-hide-borders .status-bar {
-  border-color: transparent !important;
+body.nms-hide-borders.nms-hide-borders .workspace-tab-header-container,
+body.nms-hide-borders.nms-hide-borders .view-header,
+body.nms-hide-borders.nms-hide-borders .status-bar {
+  border-color: transparent;
 }
 
 body.nms-readable-headings {
   --h1-color: var(--nms-white);
 }
 body.nms-readable-headings.theme-light { --h1-color: #0c1722; }
-body.nms-readable-headings .markdown-rendered h1,
-body.nms-readable-headings .HyperMD-header-1,
-body.nms-readable-headings .cm-header-1,
-body.nms-readable-headings .inline-title {
+body.nms-readable-headings.nms-readable-headings .markdown-rendered h1,
+body.nms-readable-headings.nms-readable-headings .HyperMD-header-1,
+body.nms-readable-headings.nms-readable-headings .cm-header-1,
+body.nms-readable-headings.nms-readable-headings .inline-title {
   font-family: var(--nms-font-ui), var(--font-interface);
   font-weight: 600;
-  text-shadow: none !important;
+  text-shadow: none;
 }
 
 /* ============================================================
@@ -805,7 +805,7 @@ body:not(.nms-no-glyphs) .markdown-reading-view h6,
 body:not(.nms-no-glyphs) .inline-title,
 body:not(.nms-no-glyphs) .callout-title-inner,
 body:not(.nms-no-glyphs) .markdown-rendered a.tag {
-  font-family: 'NMS Alphabet', var(--nms-font-heading), 'Orbitron', sans-serif !important;
+  font-family: 'NMS Alphabet', var(--nms-font-heading), 'Orbitron', sans-serif;
   letter-spacing: 0.04em;
 }
 body:not(.nms-no-glyphs) .markdown-reading-view h1:hover,
@@ -818,7 +818,7 @@ body:not(.nms-no-glyphs) .inline-title:hover,
 body:not(.nms-no-glyphs) .inline-title:focus,
 body:not(.nms-no-glyphs) .callout-title-inner:hover,
 body:not(.nms-no-glyphs) .markdown-rendered a.tag:hover {
-  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif;
 }
 
 /* ============================================================
@@ -827,21 +827,21 @@ body:not(.nms-no-glyphs) .markdown-rendered a.tag:hover {
 body.theme-dark:not(.nms-galaxy-off) {
   --divider-color: transparent;
 }
-body.theme-dark:not(.nms-galaxy-off) .workspace-tab-header-container,
-body.theme-dark:not(.nms-galaxy-off) .workspace-tabs .workspace-tab-header,
-body.theme-dark:not(.nms-galaxy-off) .workspace-tab-header.is-active,
-body.theme-dark:not(.nms-galaxy-off) .view-header,
-body.theme-dark:not(.nms-galaxy-off) .status-bar,
-body.theme-dark:not(.nms-galaxy-off) .titlebar,
-body.theme-dark:not(.nms-galaxy-off) .workspace-ribbon {
-  background: transparent !important;
-  border-color: transparent !important;
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-tab-header-container,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-tabs .workspace-tab-header,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-tab-header.is-active,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .view-header,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .status-bar,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .titlebar,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-ribbon {
+  background: transparent;
+  border-color: transparent;
 }
-body.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-left-split,
-body.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-right-split,
-body.theme-dark:not(.nms-galaxy-off) .workspace-sidedock-vault-profile {
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-left-split,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-split.mod-right-split,
+body.theme-dark.theme-dark:not(.nms-galaxy-off) .workspace-sidedock-vault-profile {
   --background-secondary: transparent;
-  background: transparent !important;
+  background: transparent;
 }
 
 
@@ -869,7 +869,7 @@ body.theme-dark:not(.nms-no-boot)::after {
 }
 @keyframes nmsBoot { 0% { opacity: 0; } 14% { opacity: 1; } 76% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
 @keyframes nmsBootRing { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.5); } 25% { opacity: 1; } 80% { opacity: 0.7; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.5); visibility: hidden; } }
-@media (prefers-reduced-motion: reduce) { body.theme-dark::before, body.theme-dark:not(.nms-no-boot)::after { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { body.theme-dark:not(.nms-no-boot)::before, body.theme-dark:not(.nms-no-boot)::after { display: none; } }
 
 /* ============================================================
    HUD CORNER BRACKETS on the active editor note
@@ -969,7 +969,7 @@ body.nms-focus .markdown-reading-view h6,
 body.nms-focus .inline-title,
 body.nms-focus .callout-title-inner,
 body.nms-focus .markdown-rendered a.tag {
-  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif;
 }
 
 
@@ -1027,11 +1027,11 @@ body.nms-glyphs-all .nav-file-title-content,
 body.nms-glyphs-all .nav-folder-title-content,
 body.nms-glyphs-all .workspace-tab-header-inner-title,
 body.nms-glyphs-all .status-bar-item {
-  font-family: 'NMS Alphabet', var(--nms-font-heading), monospace !important;
+  font-family: 'NMS Alphabet', var(--nms-font-heading), monospace;
 }
 body.nms-glyphs-all .nav-file-title:hover .nav-file-title-content,
 body.nms-glyphs-all .nav-folder-title:hover .nav-folder-title-content,
 body.nms-glyphs-all .workspace-tab-header:hover .workspace-tab-header-inner-title,
 body.nms-glyphs-all .status-bar-item:hover {
-  font-family: var(--nms-font-heading), 'Orbitron', sans-serif !important;
+  font-family: var(--nms-font-heading), 'Orbitron', sans-serif;
 }
