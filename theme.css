@@ -241,10 +241,11 @@ body {
   --nms-accent-rgb: 0, 229, 255;
   --nms-on-accent: #04121a;
 
-  /* fonts */
-  --font-text: var(--nms-font-body), 'Segoe UI', system-ui, sans-serif;
-  --font-interface: var(--nms-font-ui), 'Segoe UI', system-ui, sans-serif;
-  --font-monospace: 'JetBrains Mono', 'Fira Code', ui-monospace, 'SFMono-Regular', monospace;
+  /* fonts — set the *-theme variables (not --font-text etc.) so the fonts a user picks in
+     Settings → Appearance → Font still win, as Obsidian intends */
+  --font-text-theme: var(--nms-font-body), 'Segoe UI', system-ui, sans-serif;
+  --font-interface-theme: var(--nms-font-ui), 'Segoe UI', system-ui, sans-serif;
+  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', ui-monospace, 'SFMono-Regular', monospace;
   --font-text-size: calc(var(--nms-font-size) * 1px);
 
   /* native Obsidian accent (HSL) — cyan */
@@ -494,7 +495,6 @@ body.nms-accent-violet { --nms-accent: #b985ff; --nms-accent-rgb: 185,133,255;--
 .markdown-rendered a.external-link,
 .cm-link, .cm-url, .cm-hmd-internal-link {
   color: var(--text-accent);
-  text-decoration-color: rgba(var(--nms-accent-rgb), 0.4);
 }
 .markdown-rendered a:hover { color: var(--text-accent-hover); }
 
@@ -907,7 +907,7 @@ body.theme-dark .cm-s-obsidian .cm-hmd-internal-link:hover {
    TITLE SCAN-IN reveal on note open
    ============================================================ */
 .inline-title { animation: nmsTitleIn 0.55s ease both; }
-@keyframes nmsTitleIn { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes nmsTitleIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: none; } }
 
 /* ============================================================
    HUD TOASTS — styles all Obsidian notices (e.g. discovery toast)
