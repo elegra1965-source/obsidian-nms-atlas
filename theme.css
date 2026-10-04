@@ -130,6 +130,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: nms-no-hover-translate
+    title: Disable hover-to-translate for NMS Alphabet fonts
+    description: If you set Settings → Appearance → Interface font or Text font to "NMS Alphabet", hovering a file, folder, tab, menu or setting (or a paragraph / the line you're editing) shows it in English. Enable this to stay fully alien.
+    type: class-toggle
+    default: false
+  -
     id: nms-immersion-section
     title: Immersion
     type: heading
@@ -819,6 +825,37 @@ body:not(.nms-no-glyphs) .inline-title:focus,
 body:not(.nms-no-glyphs) .callout-title-inner:hover,
 body:not(.nms-no-glyphs) .markdown-rendered a.tag:hover {
   font-family: var(--nms-font-heading), 'Orbitron', sans-serif;
+}
+
+/* ============================================================
+   HOVER-TO-TRANSLATE for the whole UI (v1.2.4)
+   When the Interface / Text font is set to "NMS Alphabet" in
+   Settings → Appearance, hovering an item shows it in English,
+   and the line you are editing is always English. With normal
+   fonts this just swaps to the theme font, so it is invisible.
+   ============================================================ */
+body:not(.nms-no-hover-translate) :is(
+  .nav-file-title, .nav-folder-title, .tree-item-self,
+  .workspace-tab-header, .view-header-title-container, .view-header-breadcrumb,
+  .menu-item, .suggestion-item, .vertical-tab-nav-item,
+  .setting-item, .modal-title, .status-bar-item,
+  .graph-controls .tree-item-self, .graph-controls .setting-item,
+  .side-dock-ribbon-action, .nav-header, .prompt-instruction
+):hover,
+body:not(.nms-no-hover-translate) :is(
+  .nav-file-title, .nav-folder-title, .tree-item-self,
+  .workspace-tab-header, .menu-item, .suggestion-item,
+  .vertical-tab-nav-item, .setting-item, .status-bar-item
+):hover *,
+body:not(.nms-no-hover-translate) :is(.menu-item.selected, .suggestion-item.is-selected, .vertical-tab-nav-item.is-active:hover) {
+  font-family: var(--font-interface-theme) !important;
+}
+/* note text: hovered paragraph / list item / table cell, and the line being edited */
+body:not(.nms-no-hover-translate) .markdown-rendered :is(p, li, td, th, blockquote):hover,
+body:not(.nms-no-hover-translate) .cm-line:hover,
+body:not(.nms-no-hover-translate) .cm-line.cm-active,
+body:not(.nms-no-hover-translate) .markdown-source-view .cm-content:focus-within .cm-active {
+  font-family: var(--font-text-theme) !important;
 }
 
 /* ============================================================
