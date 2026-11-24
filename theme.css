@@ -189,6 +189,17 @@ settings:
     type: class-toggle
     default: false
   -
+    id: nms-no-canvas
+    title: Disable canvas styling
+    description: Turns off the HUD look on Obsidian's canvas view (nodes, connectors and controls).
+    type: class-toggle
+    default: false
+  -
+    id: nms-font-note
+    type: info-text
+    title: Full alien interface
+    description: To make the whole window alien, set Settings → Appearance → Interface font to NMS Alphabet and put it at the TOP of the list. Obsidian uses the first font in the list that it can find, so any font above it wins. Hover anything to read it in English.
+  -
     id: nms-type-section
     title: Typography
     type: heading
@@ -834,7 +845,7 @@ body:not(.nms-no-glyphs) .markdown-rendered a.tag:hover {
    and the line you are editing is always English. With normal
    fonts this just swaps to the theme font, so it is invisible.
    ============================================================ */
-body:not(.nms-no-hover-translate) :is(
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) :is(
   .nav-file-title, .nav-folder-title, .tree-item-self,
   .workspace-tab-header, .view-header-title-container, .view-header-breadcrumb,
   .menu-item, .suggestion-item, .vertical-tab-nav-item,
@@ -842,20 +853,20 @@ body:not(.nms-no-hover-translate) :is(
   .graph-controls .tree-item-self, .graph-controls .setting-item,
   .side-dock-ribbon-action, .nav-header, .prompt-instruction
 ):hover,
-body:not(.nms-no-hover-translate) :is(
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) :is(
   .nav-file-title, .nav-folder-title, .tree-item-self,
   .workspace-tab-header, .menu-item, .suggestion-item,
   .vertical-tab-nav-item, .setting-item, .status-bar-item
 ):hover *,
-body:not(.nms-no-hover-translate) :is(.menu-item.selected, .suggestion-item.is-selected, .vertical-tab-nav-item.is-active:hover) {
-  font-family: var(--font-interface-theme) !important;
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) :is(.menu-item.selected, .suggestion-item.is-selected, .vertical-tab-nav-item.is-active:hover) {
+  font-family: var(--font-interface-theme);
 }
 /* note text: hovered paragraph / list item / table cell, and the line being edited */
-body:not(.nms-no-hover-translate) .markdown-rendered :is(p, li, td, th, blockquote):hover,
-body:not(.nms-no-hover-translate) .cm-line:hover,
-body:not(.nms-no-hover-translate) .cm-line.cm-active,
-body:not(.nms-no-hover-translate) .markdown-source-view .cm-content:focus-within .cm-active {
-  font-family: var(--font-text-theme) !important;
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .markdown-rendered :is(p, li, td, th, blockquote):hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .cm-line:hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .cm-line.cm-active,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .markdown-source-view .cm-content:focus-within .cm-active {
+  font-family: var(--font-text-theme);
 }
 
 /* ============================================================
@@ -1072,3 +1083,129 @@ body.nms-glyphs-all .workspace-tab-header:hover .workspace-tab-header-inner-titl
 body.nms-glyphs-all .status-bar-item:hover {
   font-family: var(--nms-font-heading), 'Orbitron', sans-serif;
 }
+
+/* ============================================================
+   HOVER-TO-TRANSLATE · gaps found in v1.2.4 (v1.3 patch)
+   New-tab page actions ("Create new note", "Go to file", ...) and
+   ribbon / button tooltips stayed in NMS Alphabet on hover.
+   Tooltips only appear while hovering something, so they are
+   always English. Same toggle as the rest of hover-to-translate.
+   ============================================================ */
+/* backlinks / search result snippets sit beside the file title, not inside it */
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .search-result-file-match:hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .search-result-file-match:hover *,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .search-result-file-matches:hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .search-result-file-matches:hover *,
+/* vault switcher (bottom of the sidebar) */
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .workspace-drawer-vault-switcher:hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .workspace-drawer-vault-switcher:hover *,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .empty-state-action:hover,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .empty-state-action:hover *,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .empty-state-title:hover {
+  font-family: var(--font-interface-theme);
+}
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .tooltip,
+body:not(.nms-no-hover-translate):not(.nms-no-hover-translate) .tooltip * {
+  font-family: var(--font-interface-theme);
+}
+
+/* ============================================================
+   CANVAS  ·  HUD nodes on the galaxy  (v1.3 patch)
+   Cards, connectors and controls styled like the rest of the HUD.
+   Turn off with the "Disable canvas styling" Style Settings toggle.
+   ============================================================ */
+body:not(.nms-no-canvas) {
+  /* canvas colour slots 1-6 = red, orange, yellow, green, cyan, purple (matches the callout palette) */
+  --canvas-color-1: 255, 82, 82;
+  --canvas-color-2: 255, 140, 40;
+  --canvas-color-3: var(--nms-gold-rgb);
+  --canvas-color-4: 56, 225, 160;
+  --canvas-color-5: var(--nms-accent-rgb);
+  --canvas-color-6: 170, 120, 255;
+  --canvas-dot-pattern: rgba(var(--nms-accent-rgb), 0.22);
+}
+body:not(.nms-no-canvas) .canvas-wrapper { background: transparent; }
+
+/* nodes: dark glass-free panel, accent border, corner brackets */
+body:not(.nms-no-canvas) .canvas-node-container {
+  --nms-node-rgb: var(--nms-accent-rgb);
+  border: 1px solid rgba(var(--nms-node-rgb), 0.38);
+  border-radius: 2px;
+  background-color: rgba(4, 14, 24, 0.78);
+  background-image:
+    linear-gradient(rgba(var(--nms-node-rgb), 1), rgba(var(--nms-node-rgb), 1)),
+    linear-gradient(rgba(var(--nms-node-rgb), 1), rgba(var(--nms-node-rgb), 1)),
+    linear-gradient(rgba(var(--nms-node-rgb), 1), rgba(var(--nms-node-rgb), 1)),
+    linear-gradient(rgba(var(--nms-node-rgb), 1), rgba(var(--nms-node-rgb), 1));
+  background-repeat: no-repeat;
+  background-size: 12px 2px, 2px 12px, 12px 2px, 2px 12px;
+  background-position: left top, left top, right bottom, right bottom;
+}
+body:not(.nms-no-canvas) .canvas-node.is-focused .canvas-node-container,
+body:not(.nms-no-canvas) .canvas-node.is-selected .canvas-node-container {
+  border-color: rgba(var(--nms-node-rgb), 0.9);
+}
+body.theme-dark.nms-glow:not(.nms-no-canvas) .canvas-node.is-focused .canvas-node-container,
+body.theme-dark.nms-glow:not(.nms-no-canvas) .canvas-node.is-selected .canvas-node-container {
+  box-shadow: 0 0 14px -2px rgba(var(--nms-node-rgb), 0.55);
+}
+body:not(.nms-no-canvas) .canvas-node-content,
+body:not(.nms-no-canvas) .canvas-node-content .markdown-rendered { background: transparent; color: var(--text-normal); }
+
+/* coloured nodes keep their own colour; plain nodes use the accent */
+body:not(.nms-no-canvas) .canvas-node[style*="--canvas-color"] .canvas-node-container,
+body:not(.nms-no-canvas) .canvas-node-container[style*="--canvas-color"] {
+  --nms-node-rgb: var(--canvas-color);
+}
+
+/* node labels (file / group names) read as console tags */
+body:not(.nms-no-canvas) .canvas-node-label {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  font-size: 0.72em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nms-accent);
+}
+body:not(.nms-no-canvas) .canvas-node[style*="--canvas-color"] .canvas-node-label {
+  color: rgba(var(--canvas-color), 1);
+}
+
+/* groups: dashed outline, no fill */
+body:not(.nms-no-canvas) .canvas-node.canvas-node-group .canvas-node-container {
+  background-image: none;
+  background-color: rgba(var(--nms-node-rgb), 0.05);
+  border-style: dashed;
+}
+
+/* connectors */
+body:not(.nms-no-canvas) .canvas-edges path.canvas-display-path {
+  stroke: rgba(var(--nms-accent-rgb), 0.55);
+  stroke-width: 1.5px;
+}
+body:not(.nms-no-canvas) .canvas-edges .is-selected path.canvas-display-path,
+body:not(.nms-no-canvas) .canvas-edges .is-focused path.canvas-display-path {
+  stroke: rgba(var(--nms-gold-rgb), 1);
+}
+body:not(.nms-no-canvas) .canvas-path-label {
+  font-family: var(--nms-font-heading), 'Orbitron', var(--font-interface);
+  font-size: 0.7em;
+  letter-spacing: 0.08em;
+  background: rgba(4, 14, 24, 0.85);
+  border: 1px solid rgba(var(--nms-accent-rgb), 0.35);
+}
+
+/* controls and card menu */
+body:not(.nms-no-canvas) .canvas-controls .canvas-control-item,
+body:not(.nms-no-canvas) .canvas-card-menu {
+  background: rgba(4, 14, 24, 0.85);
+  border: 1px solid rgba(var(--nms-accent-rgb), 0.3);
+  border-radius: 2px;
+}
+body:not(.nms-no-canvas) .canvas-controls .canvas-control-item:hover { color: var(--nms-accent); }
+
+/* light mode (Daylight Scanner): ink colours, pale panels */
+body.theme-light:not(.nms-no-canvas) .canvas-node-container { background-color: rgba(255, 255, 255, 0.82); }
+body.theme-light:not(.nms-no-canvas) .canvas-edges path.canvas-display-path { stroke: var(--nms-accent-ink); }
+body.theme-light:not(.nms-no-canvas) .canvas-path-label,
+body.theme-light:not(.nms-no-canvas) .canvas-controls .canvas-control-item,
+body.theme-light:not(.nms-no-canvas) .canvas-card-menu { background: rgba(255, 255, 255, 0.9); }
