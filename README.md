@@ -17,6 +17,7 @@ A deep-space, No Man's Sky-inspired theme for [Obsidian](https://obsidian.md). Y
 - **NMS callouts** — `> [!atlas]`, `> [!sentinel]`, `> [!korvax]`, `> [!vykeen]`, `> [!gek]`, `> [!traveller]`, `> [!anomaly]`, `> [!scan]`.
 - **Canvas styling** — Obsidian canvas cards, groups, connectors and controls get the HUD look: cyan (or per-colour) borders with corner brackets, dashed groups, console-style labels. Turn it off with **Disable canvas styling** in Style Settings.
 - **Focus / writing mode** — calms the galaxy and reverts glyphs to English for distraction-free writing.
+- **Live cockpit (optional)** — a Dataview home note with a rotating star chart under a cockpit arch, expedition and ship tiles, and a ship that flies in when your vault levels up. See `nms-live-cockpit/`.
 - **Dark + light** — dark is the deep-space console; light is "Daylight Scanner."
 
 ## Install
@@ -54,6 +55,7 @@ Everything works at sensible defaults even without Style Settings; the plugin ju
 ## Companion pieces (optional, in this repo)
 
 - `nms-discovery-toast/` — a tiny plugin that fires "◆ ENTRY REGISTERED / DATA SYNCED" toasts on note create/save (CSS can't hook those events). Copy into `.obsidian/plugins/` and enable.
+- `nms-live-cockpit/` — the live cockpit home note: a CSS snippet, the note itself and an example vault. Needs Dataview and Style Settings. See its README.
 - `nms-glyph-translate/` — the standalone glyph-on-hover component (CSS + JS + offline demo) for use in web projects.
 
 ## Notes & credits

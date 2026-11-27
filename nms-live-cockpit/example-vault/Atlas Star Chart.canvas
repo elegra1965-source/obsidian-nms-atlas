@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"hub","type":"text","text":"# Eltiensleen Survey\nFive systems · one lane","x":-150,"y":-60,"width":340,"height":110,"color":"5"},
+		{"id":"s-Kethra Prime","type":"file","file":"Systems/Kethra Prime.md","x":-700,"y":-420,"width":300,"height":170,"color":"3"},
+		{"id":"s-Orovane","type":"file","file":"Systems/Orovane.md","x":520,"y":-420,"width":300,"height":170,"color":"1"},
+		{"id":"s-Vell-Ashkar","type":"file","file":"Systems/Vell-Ashkar.md","x":760,"y":60,"width":300,"height":170,"color":"6"},
+		{"id":"s-Tessaline","type":"file","file":"Systems/Tessaline.md","x":-760,"y":160,"width":300,"height":170,"color":"4"},
+		{"id":"s-Hadrix Reach","type":"file","file":"Systems/Hadrix Reach.md","x":-100,"y":380,"width":300,"height":170,"color":"5"},
+		{"id":"p-Kethra Prime-0","type":"file","file":"Planets/Kethra Prime III Glasshollow.md","x":-760,"y":-700,"width":280,"height":150,"color":"3"},
+		{"id":"p-Orovane-0","type":"file","file":"Planets/Orovane II Emberfall.md","x":340,"y":-700,"width":280,"height":150,"color":"1"},
+		{"id":"p-Orovane-1","type":"file","file":"Planets/Orovane V Saltmere.md","x":700,"y":-700,"width":280,"height":150,"color":"1"},
+		{"id":"p-Vell-Ashkar-0","type":"file","file":"Planets/Vell-Ashkar I Relay.md","x":1180,"y":60,"width":280,"height":150,"color":"6"},
+		{"id":"p-Tessaline-0","type":"file","file":"Planets/Tessaline IV Mossgarden.md","x":-1180,"y":60,"width":280,"height":150,"color":"4"},
+		{"id":"p-Tessaline-1","type":"file","file":"Planets/Tessaline II Thornwake.md","x":-1180,"y":330,"width":280,"height":150,"color":"4"},
+		{"id":"p-Hadrix Reach-0","type":"file","file":"Planets/Hadrix I The Drift.md","x":-420,"y":620,"width":280,"height":150,"color":"5"},
+		{"id":"p-Hadrix Reach-1","type":"file","file":"Planets/Hadrix III Quietmoon.md","x":200,"y":620,"width":280,"height":150,"color":"5"},
+		{"id":"fauna-1","type":"file","file":"Fauna/Prism Hopper.md","x":-1160,"y":-700,"width":260,"height":130,"color":"3"},
+		{"id":"lore-1","type":"file","file":"Lore/The Atlas Path Fragment.md","x":260,"y":880,"width":300,"height":140,"color":"6"},
+		{"id":"legend","type":"text","text":"**Legend**\nColours follow the system. Click any card to open its note.","x":-150,"y":-300,"width":340,"height":120}
+	],
+	"edges":[
+		{"id":"e-Kethra Prime","fromNode":"hub","toNode":"s-Kethra Prime","fromSide":"left","toSide":"right","label":"lane"},
+		{"id":"e-Orovane","fromNode":"hub","toNode":"s-Orovane","fromSide":"right","toSide":"left","label":"lane"},
+		{"id":"e-Vell-Ashkar","fromNode":"hub","toNode":"s-Vell-Ashkar","fromSide":"right","toSide":"left","label":"lane"},
+		{"id":"e-Tessaline","fromNode":"hub","toNode":"s-Tessaline","fromSide":"left","toSide":"right","label":"lane"},
+		{"id":"e-Hadrix Reach","fromNode":"hub","toNode":"s-Hadrix Reach","fromSide":"left","toSide":"right","label":"lane"},
+		{"id":"e-p-Kethra Prime-0","fromNode":"s-Kethra Prime","toNode":"p-Kethra Prime-0","fromSide":"top","toSide":"bottom"},
+		{"id":"e-p-Orovane-0","fromNode":"s-Orovane","toNode":"p-Orovane-0","fromSide":"top","toSide":"bottom"},
+		{"id":"e-p-Orovane-1","fromNode":"s-Orovane","toNode":"p-Orovane-1","fromSide":"top","toSide":"bottom"},
+		{"id":"e-p-Vell-Ashkar-0","fromNode":"s-Vell-Ashkar","toNode":"p-Vell-Ashkar-0","fromSide":"left","toSide":"right"},
+		{"id":"e-p-Tessaline-0","fromNode":"s-Tessaline","toNode":"p-Tessaline-0","fromSide":"top","toSide":"bottom"},
+		{"id":"e-p-Tessaline-1","fromNode":"s-Tessaline","toNode":"p-Tessaline-1","fromSide":"bottom","toSide":"top"},
+		{"id":"e-p-Hadrix Reach-0","fromNode":"s-Hadrix Reach","toNode":"p-Hadrix Reach-0","fromSide":"bottom","toSide":"top"},
+		{"id":"e-p-Hadrix Reach-1","fromNode":"s-Hadrix Reach","toNode":"p-Hadrix Reach-1","fromSide":"bottom","toSide":"top"},
+		{"id":"e-f1","fromNode":"p-Kethra Prime-0","toNode":"fauna-1","fromSide":"left","toSide":"right","label":"lives on"},
+		{"id":"e-l2","fromNode":"p-Hadrix Reach-0","toNode":"lore-1","fromSide":"bottom","toSide":"left","label":"found at"}
+	]
+}
