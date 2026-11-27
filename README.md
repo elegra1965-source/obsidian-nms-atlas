@@ -4,8 +4,13 @@ A deep-space, No Man's Sky-inspired theme for [Obsidian](https://obsidian.md). Y
 
 > Cyan & gold HUD · galaxy background · alien glyph headings · dark + light · deep Style Settings.
 
-<!-- Add a real capture named screenshot.png at the repo root, then this will render: -->
 ![No Mans Sky - Atlas](screenshot.png)
+
+**Live Cockpit (optional):** a Dataview home note with a rotating star chart under a cockpit arch, with your notes alongside in the graph view.
+
+![Live Cockpit with graph view](screenshots/cockpit-graph.png)
+
+![Live Cockpit in the example vault](screenshots/cockpit-example-vault.png)
 
 ## Features
 
